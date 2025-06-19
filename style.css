@@ -1,0 +1,774 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+  position: fixed;
+}
+
+/* Logo Section */
+.E-Learing h3 {
+  font-size: 24px;
+  color: #007bff;
+  font-weight: 700;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+/* Header Icons */
+.header-icon {
+  display: flex;
+  gap: 20px;
+}
+
+.header-icon a {
+  color: #333;
+  font-size: 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-icon a:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
+/* Menu Icon (only visible on small screens) */
+#menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Responsive Layout for Tablets and Mobiles */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .header-icon {
+    margin-top: 10px;
+    gap: 15px;
+  }
+
+  #menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  /* When menu is active (you toggle a class via JS) */
+  .navbar.active {
+    display: flex;
+  }
+  
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  align-items: center;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+  background-color: #f8f9fa;
+
+  width: 100%;
+}
+
+/* Text Side */
+.home-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.home-text h6 {
+  font-size: 16px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.home-text h1 {
+  font-size: 38px;
+  color: #333;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Email Form */
+.latter form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.latter input[type="email"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.latter input[type="submit"] {
+  padding: 12px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.latter input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Image Side */
+.home-imge {
+  flex: 1;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.home-imge img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+  .latter form {
+    flex-direction: column;
+  }
+
+  .latter input[type="email"],
+  .latter input[type="submit"] {
+    width: 100%;
+  }
+
+  .home-text h1 {
+    font-size: 30px;
+  }
+}
+
+/* Container Section */
+.container {
+  display: flex;
+  justify-content: center;
+  gap:1.7rem;
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+}
+
+/* Each Box */
+.container-box {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #fff;
+  width: 250px;
+  height: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Styling */
+.container-img img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Text Styling */
+.container-text h4 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.container-text p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .container {
+    gap: 20px;
+  }
+
+  .container-box {
+    width: 180px;
+    padding: 16px;
+  }
+
+  .container-text h4 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-box {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* SECTION STYLES */
+.categories {
+  padding: 60px 10%;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+/* HEADINGS */
+.center-text h5 {
+  color: #007bff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.center-text h2 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* ALL CATEGORY CONTAINER: Flex layout */
+.all-cotegri {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  margin-bottom: 40px;
+}
+
+/* EACH categories-content BLOCK (optional layer) */
+.categories-content {
+  width: auto;
+}
+
+/* CATEGORY BOX */
+.box {
+  background-color: #fff;
+  width: 220px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.box:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE INSIDE BOX */
+.box img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* BOX TEXT */
+.box h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.box p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* BUTTON */
+.main-btn .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.main-btn .btn:hover {
+  background-color: #0056b3;
+}
+
+/* ====== COURSES SECTION ====== */
+.courses {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Section Headings */
+.center-text h5 {
+  color: #007bff;
+  font-size: 16px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.center-text h2 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Courses Grid */
+.all-course {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Each Course Card */
+.courses-content {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.courses-content:hover {
+  transform: translateY(-8px);
+}
+
+/* Course Image */
+.courses-content .row img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Course Text */
+.courses-text {
+  padding: 15px 20px 10px;
+}
+
+.courses-text h5 {
+  color: #007bff;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.courses-text h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.courses-text h6 {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Rating Section */
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 15px;
+  border-top: 1px solid #eee;
+}
+
+.star a {
+  color: #f4c150; /* Gold color */
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.review p {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}
+
+/* Buy Button Container */
+.Byu-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Buy Now Button Style */
+.Byu-btn button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.Byu-btn button:hover {
+  background-color: #0056b3;
+}
+
+/* ========== Responsive Design ========== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .courses-content {
+    width: 45%;
+  }
+
+  .center-text h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .courses-content {
+    width: 100%;
+  }
+
+  .center-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* === ABOUT SECTION === */
+.about {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Heading */
+.about h1 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Layout for image and text */
+.about-img,
+.about-text {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* Image styling */
+.about-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* About Text */
+.about-text h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-text h4 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.about-text h5 {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.about-text .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.about-text .btn:hover {
+  background-color: #0056b3;
+}
+
+/* === RESPONSIVE FLEX LAYOUT ON LARGE SCREENS === */
+@media (min-width: 992px) {
+  .about {
+    text-align: left;
+  }
+
+  .about-img,
+  .about-text {
+    max-width: none;
+    width: 48%;
+    margin: 0;
+  }
+
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .about h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact {
+  background-color: #f1f1f1;
+  padding: 60px 10% 40px;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.main-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* === CONTACT SECTION === */
+.contact {
+  background-color: #f1f1f1;
+  padding: 60px 10% 40px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* === MAIN CONTACT FLEX CONTAINER === */
+.main-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* === EACH COLUMN === */
+.contact-content {
+  flex: 1 1 200px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* === LINKS AND ICONS === */
+.contact-content a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.contact-content a:hover {
+  color: #007bff;
+}
+
+/* === SOCIAL ICONS ONLY === */
+.contact-content:first-child a {
+  font-size: 24px;
+  margin: 0 6px;
+  color: #555;
+}
+
+.contact-content:first-child a:hover {
+  color: #007bff;
+}
+
+/* === RESPONSIVE FOR TABLETS === */
+@media (max-width: 992px) {
+  .main-contact {
+    justify-content: center;
+  }
+
+  .contact-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact h1 {
+    font-size: 32px;
+  }
+}
+
+/* === RESPONSIVE FOR SMALL SCREENS === */
+@media (max-width: 600px) {
+  .contact {
+    padding: 40px 5% 30px;
+  }
+
+  .main-contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-content {
+    margin-bottom: 20px;
+  }
+
+  .contact h1 {
+    font-size: 28px;
+  }
+
+  .contact-content a {
+    font-size: 14px;
+  }
+
+  .contact-content:first-child a {
+    font-size: 20px;
+  }
+}
+
+/* === FOOTER LAST TEXT === */
+.last-text {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.last-text p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive tweaks (optional for very small screens) */
+@media (max-width: 480px) {
+  .last-text p {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+}
